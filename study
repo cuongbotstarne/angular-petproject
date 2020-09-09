@@ -1,0 +1,30 @@
+//ngmodule, dependency injection, component, directive, pipe
+
+basic angular:
+- component:
+    + structure: selector,template, style
+    + data flow: 
+        +- data binding: 
+            ++ interpolation {{}}
+            ++ property: []
+            ++ event: (click)
+            ++ two-way: [()]
+        +- interaction: input, output, service, local var, @viewChild
+    + lifecycle:
+        +- How? 
+- pipes:
+    + What? to transform data for display like date, string,...
+    + Ex: {{ currentDay | uppercase}}
+- directives:
+    + What? control structure and style of view...
+        +- components
+        +- Attribute:ngClass, ngStyle, ngModel
+        +- structure: ngIf, ngFor, ngSwitch
+- dependency injection:
+    +What? is a design pattern to increase efficiency and modularity.
+
+- Router:
+- NgModule:
+
+##ASK
+1. class vs interface??? why?

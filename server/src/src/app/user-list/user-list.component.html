@@ -1,0 +1,63 @@
+<table class="table">
+  <thead>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Level</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users; index as i">
+      <td class="align-middle">{{ i }}</td>
+      <td class="align-middle" *ngIf="userEditedInput._id !== user._id">
+        <a routerLink="/users/{{ user._id }}">{{ user.name | uppercase }}</a>
+      </td>
+      <td class="align-middle" *ngIf="userEditedInput._id === user._id">
+        <input
+          type="Text"
+          class="form-control"
+          name="name"
+          [(ngModel)]="userEditedInput.name"
+        />
+      </td>
+      <td class="align-middle" *ngIf="userEditedInput._id !== user._id">
+        {{ user.level }}
+      </td>
+      <td class="align-middle" *ngIf="userEditedInput._id === user._id">
+        <input
+          type="Text"
+          class="form-control"
+          name="level"
+          [(ngModel)]="userEditedInput.level"
+        />
+      </td>
+      <td class="align-middle" *ngIf="userEditedInput._id !== user._id">
+        <button
+          (click)="toggleEditBtn(user)"
+          class="btn btn-sm btn-primary mt-2"
+        >
+          Edit
+        </button>
+      </td>
+      <td class="align-middle" *ngIf="userEditedInput._id === user._id">
+        <button
+          (click)="putUser(userEditedInput)"
+          class="btn btn-sm btn-primary mt-2"
+        >
+          Yes
+        </button>
+        <button (click)="toggleEditBtn()" class="btn btn-sm btn-danger mt-2">
+          Cancel
+        </button>
+      </td>
+      <td class="align-middle">
+        <button
+          (click)="deleteUser(user._id)"
+          class="btn btn-sm btn-danger mt-2"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

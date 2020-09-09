@@ -1,0 +1,18 @@
+<form (ngSubmit)="postUser(userNewInput)">
+  <input
+    type="Text"
+    class="form-control mt-2"
+    name="name"
+    [(ngModel)]="userNewInput.name"
+    placeholder="Name"
+  />
+  <input
+    type="Text"
+    class="form-control mt-2"
+    name="level"
+    [(ngModel)]="userNewInput.level"
+    placeholder="Level"
+  />
+
+  <button type="submit" class="btn btn-block btn-primary mt-2">Save</button>
+</form>
